@@ -46,8 +46,14 @@ fn btod_conversion(input: &str) -> String {
 }
 
 #[tauri::command]
-fn btoa_conversion(input: &str) -> String {
-    //need to 
+fn dtoa_conversion(input: &str) -> String {
+    //need to take a binary value and convert it to decimal and then have it turn into ASCII letter.
+    match input.trim().parse::<u8>() {
+        Ok(num) => (num as char).to_string(),
+        Err(num) => "Please enter a valid decimal number that is within 0..255".to_string(),
+    } 
+
+
 }
 
 
@@ -55,7 +61,7 @@ fn btoa_conversion(input: &str) -> String {
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![dtob_conversion, btod_conversion])
+        .invoke_handler(tauri::generate_handler![dtob_conversion, btod_conversion, dtoa_conversion])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

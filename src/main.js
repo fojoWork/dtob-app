@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.title = 'BTOD';
         return await invoke('btod_conversion', { input: inputValue });
         console.log('btod active')
+      case 'dtoa':
+        document.title = 'DTOA';
+        return await invoke('dtoa_conversion', { input: inputValue })
+        console.log('dtoa active')
       default:
         return "Couldn't recognize that protocol yet!";
     }
