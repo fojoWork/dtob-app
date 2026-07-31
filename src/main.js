@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
       case 'dtob':
         document.title = 'DTOB';
         return await invoke('dtob_conversion', { input: inputValue });
+        console.log('dtob active')
+      case 'btod':
+        document.title = 'BTOD';
+        return await invoke('btod_conversion', { input: inputValue });
+        console.log('btod active')
       default:
         return "Couldn't recognize that protocol yet!";
     }
