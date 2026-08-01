@@ -46,3 +46,7 @@ __When you click reset, it will reset your history, and your input field, along 
 - HTML, CSS, Javascript
 - Node JS
 - Rust (Cause of tauri duh)
+
+# TO-DO
+- CSS styling
+- binary to ascii protocol
