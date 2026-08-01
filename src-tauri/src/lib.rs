@@ -27,7 +27,7 @@ fn dtob_conversion(input: &str) -> String {
                 .map(|&b| if b == 0 { '0' } else { '1' })
                 .collect::<String>()
         }
-        Err(_) => "Please enter a valid decimal number between 65-255".to_string(),
+        Err(_) => "Please enter a valid decimal number between 0-255".to_string(),
     }
 }
 

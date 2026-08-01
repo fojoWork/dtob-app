@@ -5,29 +5,25 @@
     <link rel="stylesheet" href="styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DTOB</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mshaugh/nerdfont-webfonts@v3.3.0/build/firacode-nerd-font.css">
     <script type="module" src="/main.js" defer></script>
   </head>
-
   <body>
       <h1>DTOB CONVERTOR</h1><br>
-
-      <h2>Input</h2>
-
+      <div id="output-container"></div>
       <div id="input-container">
-        <input type="text" id="textInputField">
-        <select name="protocols" id="inputSelectionProtocols">
-          <option value="dtob">DTOB - Decimal To Binary</option>
-          <option value="btod">BTOD - Binary To Decimal</option>
-          <option value="dtoa">DTOA - Decimal To ASCII</option>
-        </select>
-        <button id="convertButton">Convert</button>
-        <button id="clearButton">Reset</button>
-      </div><br>
-
-      <h2>Output</h2>
-      
-      <div id="output-container">
-        
+        <div id="selection-fields">
+          <input type="text" id="textInputField">
+          <select name="protocols" id="inputSelectionProtocols">
+            <option value="dtob">DTOB - Decimal To Binary</option>
+            <option value="btod">BTOD - Binary To Decimal</option>
+            <option value="dtoa">DTOA - Decimal To ASCII</option>
+          </select>
+        </div>
+        <div id="buttons">
+          <button id="convertButton">EXECUTE</button>
+          <button id="clearButton">RESET</button>
+        </div>
       </div>
   </body>
 </html>

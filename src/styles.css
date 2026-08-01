@@ -1,0 +1,98 @@
+* {
+  font-family: "FiraCode Nerd Font", monospace;
+}
+
+body {
+  background-color: rgb(7, 44, 92);
+  
+  font-size: 1em;
+}
+
+#input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#selection-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 90%;
+}
+
+#buttons {
+  display: flex;
+  gap: 15px;
+}
+
+#buttons>* {
+  border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+#input-container>* {
+  margin: 15px;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: rgb(24, 23, 23);
+  color: rgb(7, 203, 0);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+input:hover,
+select:hover {
+  background-color: rgb(54, 57, 53);
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 0px 0px 10px white;
+}
+
+#buttons>*:hover {
+  background-color: rgb(54, 57, 53);
+  transition: all ease-in 0.2s;
+  transform: scale(0.9);
+}
+
+#output-container {
+  background-color: rgb(24, 23, 23);
+  height: 130px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 5px;
+}
+
+#output-container>* {
+  color: rgb(58, 255, 55);
+  text-shadow: 0px 0px 10px rgb(7, 203, 0);
+}
+
+select {
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: rgba(29, 27, 27, 0.962);
+  color: white;
+  border: 1px solid black;
+}
+
+@media (min-height: 700px) {
+  body {
+    font-size: 1.7em;
+  }
+}

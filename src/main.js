@@ -43,20 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     switch (protocol) {
       case 'dtob':
-        if (parseInt(inputValue, 10) < 65) {
-          return "Please enter a number within 65-255"
-        }
+          if (parseInt(inputValue) > 255) {
+            return "Please enter a number between 0-255";
+          }
 
-        else {
           document.title = 'DTOB';
           return await invoke('dtob_conversion', { input: inputValue });
-
-        }
-
       case 'btod':
         document.title = 'BTOD';
         return await invoke('btod_conversion', { input: inputValue });
       case 'dtoa':
+        if (parseInt(inputValue) < 65 ) {
+          return "Please enter a value that is within 65-255";
+        }
+
         document.title = 'DTOA';
         return await invoke('dtoa_conversion', { input: inputValue })
       default:
@@ -76,12 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const result = await invokeRustConversion();
         if (result === past_updation) {
 
-          resultRow.innerText = result;
+          resultRow.innerText = "System:~$ " + result;
           resultRow.style.color = "orange";
+          resultRow.style.textShadow = "0px 0px 10px rgb(255, 119, 0)";
         }
 
         else {
-          resultRow.innerText = result;
+          resultRow.innerText = "System:~$ " + result;
           past_updation = result;
         }
       }
