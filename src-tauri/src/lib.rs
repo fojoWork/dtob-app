@@ -27,12 +27,16 @@ fn dtob_conversion(input: &str) -> String {
                 .map(|&b| if b == 0 { '0' } else { '1' })
                 .collect::<String>()
         }
-        Err(_) => "Please enter a valid decimal number".to_string(),
+        Err(_) => "Please enter a valid decimal number between 65-255".to_string(),
     }
 }
 
 #[tauri::command]
 fn btod_conversion(input: &str) -> String {
+    if input.chars().count() < 8 {
+        return "Please enter eight 1 or 0 numbers".to_string();
+    }
+
     let clean_input = input.trim().trim_start_matches("0b");
 
     if clean_input.is_empty() {
@@ -47,10 +51,11 @@ fn btod_conversion(input: &str) -> String {
 
 #[tauri::command]
 fn dtoa_conversion(input: &str) -> String {
+    
     //need to take a binary value and convert it to decimal and then have it turn into ASCII letter.
     match input.trim().parse::<u8>() {
         Ok(num) => (num as char).to_string(),
-        Err(num) => "Please enter a valid decimal number that is within 0..255".to_string(),
+        Err(num) => "Please enter a valid decimal number that is within 65..255".to_string(),
     } 
 
 

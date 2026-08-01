@@ -9,6 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let past_updation = null;
 
+  selectedProtocol.addEventListener('change', function(event) {
+    const selectedValue = event.target.value;
+
+    function create_header() {
+      switch(selectedValue) {
+        case 'dtob':
+          return "DTOB CONVERTOR";
+        case 'btod':
+          return "BTOD CONVERTOR";
+        case 'dtoa':
+          return "DTOA CONVERTOR";
+        default:
+          return "your arent supposed to see this";
+      }
+    }
+
+    document.querySelector('h1').textContent = create_header();
+
+  })
+
   function readProtocol(x) {
     return x.value;
   }
@@ -23,8 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     switch (protocol) {
       case 'dtob':
-        document.title = 'DTOB';
-        return await invoke('dtob_conversion', { input: inputValue });
+        if (parseInt(inputValue, 10) < 65) {
+          return "Please enter a number within 65-255"
+        }
+
+        else {
+          document.title = 'DTOB';
+          return await invoke('dtob_conversion', { input: inputValue });
+
+        }
+
       case 'btod':
         document.title = 'BTOD';
         return await invoke('btod_conversion', { input: inputValue });
@@ -67,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   clearButton.addEventListener('click', () => {
       past_updation = null;
+      textInputField.value = "";
       outputContainer.replaceChildren();
   })
 });
