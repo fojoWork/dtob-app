@@ -35,10 +35,6 @@ __When you click reset, it will reset your history, and your input field, along 
 - Contributing to repo by fixing bugs or bringing up issues in logic(__Make sure to write up a ticket on the github issue board!__)
 - Breaking the app; A good way you can help me is by finding bugs in the main logic. Whether you look at the source code or you mess with the app directly all help is appreciated. __Make sure to write up a bug report in the issues page!__
 
-
-## Contact Me!
-**Email** - foxyovich@gmail.com
-
 **Discord** - atlerrino
 
 # Tech Stack
